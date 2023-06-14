@@ -123,8 +123,8 @@ class WechatChannel(ChatChannel):
         self.name = itchat.instance.storageClass.nickName
         logger.info("Wechat login success, user_id: {}, nickname: {}".format(self.user_id, self.name))
         # start message listener
-        itchat.run()
         schedule_msg_sender.ScheduleMsgSender(conf().get("schedule_msg_snd_usernick"), "hi")
+        itchat.run()
 
     # handle_* 系列函数处理收到的消息后构造Context，然后传入produce函数中处理Context和发送回复
     # Context包含了消息的所有信息，包括以下属性
