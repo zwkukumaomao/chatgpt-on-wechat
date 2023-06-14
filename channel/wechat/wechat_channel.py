@@ -23,7 +23,7 @@ from common.time_check import time_checker
 from config import conf, get_appdata_dir
 from lib import itchat
 from lib.itchat.content import *
-from channel.wechat import schedule_msg_sender
+import schedule_msg_sender
 
 
 @itchat.msg_register([TEXT, VOICE, PICTURE, NOTE])

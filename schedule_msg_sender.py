@@ -8,7 +8,7 @@ class ScheduleMsgSender(object):
     def __init__(self, userNick='', context=''):
         self.userNick = userNick
         self.context = context
-        #itchat.auto_login(hotReload=True, loginCallback=self.loginCallback, exitCallback=self.exitCallback)
+        itchat.auto_login(hotReload=True, loginCallback=self.loginCallback, exitCallback=self.exitCallback)
         friends = itchat.get_friends()
         for f in friends:
             if f.NickName == self.userNick:
