@@ -20,7 +20,7 @@ class ScheduleMsgSender(object):
         if user:
             sendtime = datetime.now().strftime('%m-%d-%Y %H:%M:%S,%A')
             msg = context + "  Sending in " + sendtime
-            print("send msg to %s", user)
+            print("send msg to %s, name %s", user, self.userNick)
             itchat.send_msg(msg=msg, toUserName=user)
 
     def loginCallback(self):
@@ -41,4 +41,4 @@ class ScheduleMsgSender(object):
 
 if __name__ == '__main__':
     context = "hi"
-    ScheduleMsgSender(userNick='Robot', context=context)
+    ScheduleMsgSender(userNick='雾蒙蒙', context=context)
