@@ -1,6 +1,6 @@
 from lib import itchat
 from datetime import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 class ScheduleMsgSender(object):
@@ -34,7 +34,7 @@ class ScheduleMsgSender(object):
 
     def schedulerForSender(self):
         if self.user:
-            scheduler = BlockingScheduler()
+            scheduler = BackgroundScheduler()
             scheduler.add_job(self.sendMsgToUser, 'interval', seconds=300)
             scheduler.start()
 
